@@ -1,0 +1,589 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* section {
+  height: 100vh;
+  display: flex;
+  scroll-snap-align: start;
+}
+.container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+} */
+
+/* 
+font-family: 'Comfortaa', cursive;
+font-family: 'Lobster', cursive;
+*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+.general {
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(12, 1, 39);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.myphoto {
+  height: 350px;
+  width: 250px;
+  border-radius: 140px 0 140px 0;
+}
+
+.myphotobox {
+  height: 350px;
+  width: 250px;
+  border-radius: 140px 0 140px 0;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+}
+.myphotobox::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  background: linear-gradient(45deg, #ffd800, #ff5520, #750cf2, #0cbcf2);
+  z-index: -1;
+  border-radius: 140px 0 140px 0;
+}
+.myphotobox::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: linear-gradient(45deg, #ffd800, #ff5520, #750cf2, #0cbcf2);
+  z-index: -2;
+  filter: blur(20px);
+  border-radius: 140px 0 140px 0;
+  animation: pulsate 4s linear infinite;
+}
+
+.textimage {
+  padding-left: 90px;
+  color: white;
+}
+
+.textimage h3 {
+  /* background: -webkit-linear-gradient(60deg, #7d2582, #b2aef2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  color: white;
+  font-size: 25px;
+  font-weight: 300;
+  font-family: "Comfortaa", cursive;
+  transition: 0.1s ease-in-out;
+}
+
+.textimage h3:hover {
+  transform: scale(1.1);
+}
+
+.textimage h1 {
+  font-family: "Lobster", cursive;
+  font-size: 70px;
+  padding-bottom: 10px;
+  transition: 0.1s ease-in-out;
+  background: -webkit-linear-gradient(60deg, #2702f7, #f506e1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.textimage h1:hover {
+  transform: scale(1.1);
+}
+
+.textimage h2 {
+  font-size: 30px;
+  font-family: "Comfortaa", cursive;
+  transition: 0.1s ease-in-out;
+  /* background: -webkit-linear-gradient(60deg, #7d2582, #b2aef2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  color: white;
+}
+.textimage h2:hover {
+  transform: scale(1.1);
+}
+
+.onthetop {
+  width: 100%;
+  height: 200px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 999;
+  bottom: 0px;
+}
+
+.menubox {
+  position: fixed;
+  width: 300px;
+  height: 60px;
+  background-color: transparent;
+  bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  box-shadow: rgba(223, 223, 228, 0.589) 0px 50px 100px -20px,
+    rgba(209, 206, 206, 0.3) 0px 30px 60px -30px,
+    rgba(253, 253, 253, 0.35) 0px -2px 6px 0px inset;
+}
+
+.iconmenu {
+  color: white;
+  padding: 15px;
+}
+
+.iconmenu:hover {
+  background: -webkit-linear-gradient(-60deg, #7d2582, #b2aef2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shake 0.3s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+}
+
+.scrollBtn {
+  color: white;
+  position: absolute;
+  right: 50px;
+  top: 30px;
+  writing-mode: vertical-rl;
+  text-decoration: none;
+  border-radius: 30px;
+  border: white solid 1px;
+  padding: 20px 5px;
+  transition: 0.2s ease-in-out;
+  animation: shake 1s easy linear infinite;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.scrollBtn:hover {
+  background: -webkit-linear-gradient(-60deg, #7d2582, #b2aef2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: #7d2582 solid 1px;
+  animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+}
+
+.iconssetting {
+  writing-mode: vertical-rl;
+  position: absolute;
+  top: 40px;
+  left: 50px;
+}
+
+.icontap:hover {
+  background: -webkit-linear-gradient(-60deg, #7d2582, #b2aef2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+footer i {
+  padding: 2px;
+  font-size: 20px;
+  color: white;
+  writing-mode: vertical-rl;
+}
+
+.secondPage {
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(12, 1, 39);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.fewwords {
+  font-size: 60px;
+  margin-bottom: 60px;
+  font-family: "Lobster", cursive;
+  background: -webkit-linear-gradient(60deg, #2702f7, #f506e1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.expbigbox {
+  display: flex;
+  margin-bottom: 100px;
+}
+
+.experiencebox {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  height: 350px;
+  width: 320px;
+  background-color: rgb(12, 1, 39);
+  /* background-color: transparent; */
+  /* box-shadow: rgb(179, 178, 178) 0px 5px 15px; */
+  border-radius: 20px;
+  margin: 20px;
+  transition: 0.3s ease;
+}
+
+.experiencebox:hover {
+  transform: scale(1.2);
+  box-shadow: none;
+}
+
+.experiencebox h1 {
+  font-family: "Roboto", sans-serif;
+  background: -webkit-linear-gradient(60deg, #8336c2, #3a09ec);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 10px;
+  font-size: 32px;
+  transition: 0.5s;
+}
+
+.experiencebox h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
+  color: whitesmoke;
+  padding: 10px;
+  font-size: 22px;
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 200px;
+  width: 500px;
+  height: 100px;
+  /* background: linear-gradient(
+    45deg,
+    rgb(2, 2, 29),
+    rgb(53, 2, 236),
+    rgb(15, 1, 48)
+  ); */
+  border-radius: 20px;
+}
+
+.logosicon1 {
+  color: rgb(241, 111, 4);
+  padding: 20px;
+}
+
+.logosicon2 {
+  color: rgb(29, 60, 231);
+  padding: 20px;
+}
+
+.logosicon3 {
+  color: rgb(240, 217, 15);
+  padding: 20px;
+}
+
+.logos i {
+  font-size: 50px;
+}
+
+.logotext {
+  color: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.logotext h1 {
+  font-size: 16px;
+  padding-bottom: 20px;
+}
+
+/* ! MOVING BOX  */
+/* .movingbox {
+  display: flex;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(60deg, #8701f5, #9d0abb);
+  border-radius: 50%;
+  filter: blur(250px);
+  animation: moving 30s linear infinite;
+}
+@keyframes moving {
+  from {
+    transform: translateX(-200px);
+  }
+  to {
+    transform: translateX(1700px);
+  }
+} */
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(12, 1, 39);
+}
+
+.text1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 40px;
+  /* font-family: "Comfortaa", cursive; */
+  font-family: "Lobster", cursive;
+  background: -webkit-linear-gradient(60deg, #2702f7, #f506e1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 50px;
+}
+
+.contactbox {
+  /* background-color: #750cf2; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.contactform {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactform label {
+  font-family: "Comfortaa", cursive;
+  color: white;
+  padding: 5px;
+  width: 400px;
+}
+
+.contactform input {
+  color: black;
+  background-color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.contactform select {
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.contactform textarea {
+  border-radius: 20px;
+  padding: 10px;
+  font-family: "Comfortaa", cursive;
+  margin-bottom: 20px;
+}
+
+#submit {
+  width: 200px;
+  background: linear-gradient(60deg, #2702f7, #f506e1);
+  color: white;
+  font-weight: bolder;
+  font-size: 16px;
+  cursor: pointer;
+  animation: shakesendbtn 5s linear infinite;
+}
+#submit:hover {
+  background: rgb(255, 255, 255);
+  color: black;
+}
+
+@keyframes shakesendbtn {
+  0% {
+    transform: translateX(0px);
+  }
+
+  90% {
+    transform: translateX(0);
+  }
+  91% {
+    transform: translateX(10px);
+  }
+  92% {
+    transform: translateX(-10px);
+  }
+  93% {
+    transform: translateX(10px);
+  }
+  94% {
+    transform: translateX(-10px);
+  }
+  95% {
+    transform: translateX(10px);
+  }
+  96% {
+    transform: translateX(-10px);
+  }
+  97% {
+    transform: translateX(10px);
+  }
+  98% {
+    transform: translateX(-10px);
+  }
+  99% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* !NEON CIRCLE ANIMATION 360deg */
+/* .circle-1 {
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ffd800, #ff5520, #750cf2, #0cbcf2);
+  animation: rotate 1s linear infinite;
+}
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.circle-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  background-color: rgb(12, 1, 39);
+  border-radius: 50%;
+} */
+
+@media only screen and (max-width: 480px) {
+  .myphotobox {
+    margin-top: 50px;
+    margin-bottom: 100px;
+  }
+
+  .textimage {
+    margin-bottom: 200px;
+  }
+
+  .expbigbox {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -50px;
+  }
+
+  .secondPage {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(12, 1, 39);
+  }
+
+  .fewwords {
+    text-align: center;
+    padding: 10px;
+    padding-top: 80px;
+  }
+
+  .sendmemessage {
+    text-align: center;
+  }
+
+  .contactform input {
+    width: 300px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  .contactform select {
+    width: 300px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  .contactform textarea {
+    width: 300px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  .contactbox label {
+    width: 200px;
+    margin-left: 30px;
+  }
+
+  .onthetop {
+    display: none;
+  }
+
+  .logos {
+    width: 100%;
+  }
+
+  .contactform {
+    width: 370px;
+  }
+}

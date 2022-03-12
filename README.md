@@ -1,3 +1,3 @@
 # Design-by-Miller
 
-[Design by Miller](www.designbymiller.com)
+[Design by Miller](https://www.designbymiller.com/)

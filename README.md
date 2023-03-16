@@ -1,3 +1,3 @@
 # Design-by-Miller
 
-[Design by Miller](https://www.designbymiller.com/)
+[Design by Miller](https://xc3mill.github.io/Design-by-Miller/)
